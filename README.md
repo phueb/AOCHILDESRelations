@@ -15,7 +15,7 @@ and information about the semantic relations they enter with each other.
 - Antonymy
 
 
-## Advanced
+## Two-Process Theory
 
 Given word embeddings for words in AO-CHILDES (learned by any distributional semantic model),
 it is possible to "fine-tune" the word embedding space using a supervised learning algorithm based on the data provided in this repository. 
