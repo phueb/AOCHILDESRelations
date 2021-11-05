@@ -14,6 +14,9 @@ and information about the semantic relations they enter with each other.
 - Synonymy
 - Antonymy
 
+The data is located in the folder `relations`. Each line in each text file contains several words. 
+The first word is the target concept, and the remaining words are the "relata" (i.e words that are related to the target concept).
+
 
 ## Two-Process Theory
 
@@ -33,12 +36,12 @@ consists of matching a probe with multiple correct answers
 ### Identification
 consists of identifying correct answer from multiple-choice question
 
-## Architectures for learning how words are related
+### Architectures for learning how words are related
 
 - Comparator
 - Classifier
 
-## Corpora 
+### Corpora 
 
 There are two different CHILDES corpora in the repository used as input to the word embedding models. 
 `childes-20171212.txt` was generated in the same way as `childes-20180319.txt` except that a few additional steps were taken:
