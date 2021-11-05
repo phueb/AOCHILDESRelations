@@ -30,16 +30,17 @@ The results and statistical analyses used in the paper are available in the fold
 The original code repository referenced in the paper is no longer available due to incompatibility with newer version of `Ludwig`,
 required for submitting jobs to the UIUC Language & Learning job submission system.
 
-### Matching
-consists of matching a probe with multiple correct answers
+The task used in Process-2, after training Process-1 models, to fine-tune word embeddings is called "identification".
+It is similar to a multiple-choice task, where the Process-2 model is tasked with identifying one correct relatum out of several lures.
 
-### Identification
-consists of identifying correct answer from multiple-choice question
-
-### Architectures for learning how words are related
+Different process-2 architectures were explored. They vary slightly, but essentially perform the same task:
 
 - Comparator
 - Classifier
+- Extractor 
+- Aligner
+
+The code that implements these models is available in `TwoProcessTheory/architectures`
 
 ### Corpora 
 
