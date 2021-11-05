@@ -7,6 +7,8 @@ class Dirs:
     relations = root / 'relations'
     corpora = root / 'corpora'
     vocab = root / 'vocab'
+    TwoP = root / 'TwoProcessTheory'
+    runs = TwoP / 'runs'
 
 
 class Eval:

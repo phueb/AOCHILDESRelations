@@ -1,0 +1,6 @@
+corpus_name: childes-20180319
+embed_size: 200
+job_name: null
+num_vocab: 16384
+param_name: param_1
+random_type: normal

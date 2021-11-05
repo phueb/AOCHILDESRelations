@@ -1,0 +1,13 @@
+corpus_name: childes-20180319
+count_type:
+- ww
+- concatenated
+- 7
+- linear
+job_name: null
+norm_type: ppmi
+num_vocab: 16384
+param_name: param_2
+reduce_type:
+- svd
+- 200

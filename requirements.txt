@@ -4,3 +4,6 @@ spacy~=2.1.9
 cytoolz
 bs4
 aiohttp
+matplotlib
+PyYAML
+scipy
