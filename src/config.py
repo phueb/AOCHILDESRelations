@@ -1,18 +1,12 @@
 from pathlib import Path
 
 
-class LocalDirs:
+class Dirs:
     root = Path(__file__).parent.parent
-    src = root / 'two_process_nlp'
-    create = root / 'create'
-    tasks = root / 'tasks'
+    data = root / 'data'
+    relations = root / 'relations'
     corpora = root / 'corpora'
-    runs = root / '{}_runs'.format(src.name)
-
-
-class RemoteDirs:
-    root = Path('/') / 'media' / 'research_data' / '2ProcessNLP'
-    runs = root / 'runs'
+    vocab = root / 'vocab'
 
 
 class Eval:
@@ -48,19 +42,9 @@ class Eval:
     assert num_epochs_identification % num_evals == 0
 
 
-class Embeddings:
-    save_w2e = True
-    verbose = True
-    precision = 5
-
-
 class Corpus:
     UNK = 'UNKNOWN'
     name = 'childes-20180319'
     # name = 'tasa-20181213'
     num_vocab = 16384  # TODO test
     vocab_sizes = [4096, 8192, 16384]  # also: 4096, 8192, 16384
-
-
-class Glove:
-    num_threads = 8

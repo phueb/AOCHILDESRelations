@@ -3,7 +3,7 @@
 ## Background
 
 This repository contains words extracted from the AO-CHILDES corpus,
-and information about the relations they enter with each other.
+and information about the semantic relations they enter with each other.
 
 ## Relations included in the data
 

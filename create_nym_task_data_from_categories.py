@@ -32,7 +32,7 @@ if __name__ == '__main__':
         df_combined.reset_index(level=1, inplace=True)  # make index 'group' a column
         print(df_combined)
         # vocab
-        p = config.LocalDirs.root / '{}_{}_vocab.txt'.format(config.Corpus.name, vocab_size)
+        p = config.Dirs.vocab / '{}_{}_vocab.txt'.format(config.Corpus.name, vocab_size)
         if not p.exists():
             raise RuntimeError('{} does not exist'.format(p))
         vocab = np.loadtxt(p, 'str').tolist()
@@ -89,7 +89,7 @@ if __name__ == '__main__':
                 suffix += 'shuffled'
             if REMOVE_DUPLICATES_IN_WORDS_COL:
                 suffix += 'unique'
-            out_path = config.LocalDirs.tasks / 'nyms' / nym_type / '{}_{}_{}.txt'.format(
+            out_path = config.Dirs.relations / 'nyms' / nym_type / '{}_{}_{}.txt'.format(
                 CORPUS_NAME, vocab_size, suffix)
             if not out_path.parent.exists():
                 out_path.parent.mkdir()

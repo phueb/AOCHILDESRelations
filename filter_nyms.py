@@ -4,13 +4,13 @@ import pyprind
 import sys
 import multiprocessing as mp
 
-from src.embedders.random_control import RandomControlEmbedder
-from src.params import RandomControlParams
-from src.architectures import comparator
-from src.evaluators.matching import Matching
-from src.utils import w2e_to_sims
-from src.params import gen_combinations
-from src.embedders.base import EmbedderBase
+# from src.embedders.random_control import RandomControlEmbedder
+# from src.params import RandomControlParams
+# from src.architectures import comparator
+# from src.evaluators.matching import Matching
+# from src.utils import w2e_to_sims
+# from src.params import gen_combinations
+# from src.embedders.base import EmbedderBase
 from src import config
 
 DEBUG = False  # reduces computation time
@@ -166,7 +166,7 @@ if ADD_MORE_ANTS and NYM_TYPE == 'ant':
                 new_probe2relata[p1] = {p2}
 
 # write to file
-out_path = config.LocalDirs.tasks / 'nyms' / NYM_TYPE / '{}_{}.txt'.format(CORPUS_NAME, VOCAB_SIZE)
+out_path = config.Dirs.relations / 'nyms' / NYM_TYPE / '{}_{}.txt'.format(CORPUS_NAME, VOCAB_SIZE)
 if not out_path.parent.exists():
     out_path.parent.mkdir()
 with out_path.open('w') as f:

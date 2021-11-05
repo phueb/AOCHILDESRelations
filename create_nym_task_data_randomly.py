@@ -16,7 +16,7 @@ SUFFIX = 'random3'
 if __name__ == '__main__':
     for vocab_size in config.Corpus.vocab_sizes:
         # vocab
-        p = config.RemoteDirs.root / '{}_{}_vocab.txt'.format(config.Corpus.name, config.Corpus.num_vocab)
+        p = config.Dirs.vocab / '{}_{}_vocab.txt'.format(config.Corpus.name, config.Corpus.num_vocab)
         if not p.exists():
             raise RuntimeError('{} does not exist'.format(p))
         vocab = np.loadtxt(p, 'str').tolist()
@@ -36,7 +36,7 @@ if __name__ == '__main__':
         # write to file
         for nym_type, probe2nyms in [('syn', probe2syns),
                                      ('ant', probe2ants)]:
-            out_path = config.LocalDirs.tasks / 'nyms' / nym_type / '{}_{}_{}.txt'.format(
+            out_path = config.Dirs.relations / 'nyms' / nym_type / '{}_{}_{}.txt'.format(
                 CORPUS_NAME, vocab_size, SUFFIX)
             if not out_path.parent.exists():
                 out_path.parent.mkdir()

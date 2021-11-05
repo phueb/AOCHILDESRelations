@@ -36,7 +36,7 @@ if __name__ == '__main__':
     lemmatizer = Lemmatizer(LEMMA_INDEX, LEMMA_EXC, LEMMA_RULES)
     for vocab_size in config.Corpus.vocab_sizes:
         # process mcrae data
-        mcrae_df = pd.read_csv(config.LocalDirs.create / 'mcrae_features.csv', index_col=False)
+        mcrae_df = pd.read_csv(config.Dirs.data / 'mcrae_features.csv', index_col=False)
         mcrae_df.rename(inplace=True, columns={'Feature': 'relatum'})
         mcrae_df['concept'] = [w.split('_')[0] for w in mcrae_df['Concept']]
         print('Number of unique concept words={}'.format(len(mcrae_df['concept'].unique())))
@@ -45,13 +45,13 @@ if __name__ == '__main__':
         num_relations = num_relations.to_frame('frequency')
         print(num_relations)
         # process BLESS data
-        bless_df = pd.read_csv(config.LocalDirs.create / 'BLESS.txt', sep="\t", header=None)
+        bless_df = pd.read_csv(config.Dirs.data / 'BLESS.txt', sep="\t", header=None)
         bless_df.columns = ['concept', 'class', 'relation', 'relatum']
         bless_df['concept'] = bless_df['concept'].apply(strip_pos)
         bless_df['relatum'] = bless_df['relatum'].apply(strip_pos)
         bless_df['relation'] = bless_df['relation'].apply(rename_relation)
         # vocab
-        p = config.RemoteDirs.root / '{}_{}_vocab.txt'.format(config.Corpus.name, config.Corpus.num_vocab)
+        p = config.Dirs.vocab / '{}_{}_vocab.txt'.format(config.Corpus.name, config.Corpus.num_vocab)
         if not p.exists():
             raise RuntimeError('{} does not exist'.format(p))
         vocab = np.loadtxt(p, 'str').tolist()
@@ -75,7 +75,7 @@ if __name__ == '__main__':
             probes = set([probe for probe in probes if probe in vocab])  # lemmas may not be in vocab
         # write to file
         for relation in ['has', 'is']:
-            out_path = config.LocalDirs.tasks / 'features' / relation / '{}_{}.txt'.format(CORPUS_NAME, vocab_size)
+            out_path = config.Dirs.relations / 'features' / relation / '{}_{}.txt'.format(CORPUS_NAME, vocab_size)
             if not out_path.parent.exists():
                 out_path.parent.mkdir(parents=True)
             with out_path.open('w') as f:
