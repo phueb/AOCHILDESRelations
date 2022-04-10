@@ -4,9 +4,6 @@ from TwoProcessTheory.analysis.utils import make_task_name2_probe_data
 from TwoProcessTheory.analysis.utils import check_duplicate_pairs
 
 
-CORPUS_NAME = config.Corpus.name
-NUM_VOCAB = config.Corpus.num_vocab
-
 # data
 task_name2_probe_data = make_task_name2_probe_data(
     corpus_name=config.Corpus.name, num_vocab=config.Corpus.num_vocab)

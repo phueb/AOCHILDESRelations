@@ -1,6 +1,6 @@
 # AOCHILDESRelations
 
-## Background
+## About
 
 This repository contains words extracted from the AO-CHILDES corpus,
 and information about the semantic relations they enter with each other.
@@ -42,9 +42,8 @@ Different process-2 architectures were explored. They vary slightly, but essenti
 
 The code that implements these models is available in `TwoProcessTheory/architectures`
 
-### Corpora 
+### Corpus Data
 
-There are two different CHILDES corpora in the repository used as input to the word embedding models. 
-`childes-20171212.txt` was generated in the same way as `childes-20180319.txt` except that a few additional steps were taken:
-1) all titlecased strings were replaced with a single symbol ("TITLED")
-2) all words tagged by the Python package spacy as referring to a person or organization were replaced by a single symbol ("NAME_B"if the word is the first in a span of words referring to a person or organization, and "NAME_I" if it is not the first word in a span of words referring to a person or organization)
+The AO-CHILDES corpus used here was generated using an outdated version of the Python package [AOCHILDES](https://github.com/UIUCLearningLanguageLab/AOCHILDES) in 2018. 
+
+The corpus is available in the folder `corpus` for users wishing to train and evaluate their own models.
